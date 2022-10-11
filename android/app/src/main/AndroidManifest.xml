@@ -3,6 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-sdk tools:overrideLibrary="io.flutter.plugins.firebase.firestore"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    
     <application
         android:label="chat_online"
         android:name="${applicationName}"

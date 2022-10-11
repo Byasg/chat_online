@@ -17,15 +17,24 @@ import 'package:flutter/foundation.dart'
 class DefaultFirebaseOptions {
   static FirebaseOptions get currentPlatform {
     if (kIsWeb) {
-      return web;
+      throw UnsupportedError(
+        'DefaultFirebaseOptions have not been configured for web - '
+        'you can reconfigure this by running the FlutterFire CLI again.',
+      );
     }
     switch (defaultTargetPlatform) {
       case TargetPlatform.android:
         return android;
       case TargetPlatform.iOS:
-        return ios;
+        throw UnsupportedError(
+          'DefaultFirebaseOptions have not been configured for ios - '
+          'you can reconfigure this by running the FlutterFire CLI again.',
+        );
       case TargetPlatform.macOS:
-        return macos;
+        throw UnsupportedError(
+          'DefaultFirebaseOptions have not been configured for macos - '
+          'you can reconfigure this by running the FlutterFire CLI again.',
+        );
       case TargetPlatform.windows:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for windows - '
@@ -43,40 +52,11 @@ class DefaultFirebaseOptions {
     }
   }
 
-  static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyByOc2kPBBfzePhoA4rTcv-dhDiqwRgeeM',
-    appId: '1:264465522033:web:6f8087395835f71809aad0',
-    messagingSenderId: '264465522033',
-    projectId: 'chat-online-43389',
-    authDomain: 'chat-online-43389.firebaseapp.com',
-    storageBucket: 'chat-online-43389.appspot.com',
-  );
-
   static const FirebaseOptions android = FirebaseOptions(
     apiKey: 'AIzaSyCajj_7jWsXk_mOIrS8q3_1MVYJg91YiuE',
     appId: '1:264465522033:android:6e2c040f30be020309aad0',
     messagingSenderId: '264465522033',
     projectId: 'chat-online-43389',
     storageBucket: 'chat-online-43389.appspot.com',
-  );
-
-  static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyDbdLLmlkV1v6N5AyKBkLUl-iLj9MGIJFo',
-    appId: '1:264465522033:ios:fe8257b124a9bbca09aad0',
-    messagingSenderId: '264465522033',
-    projectId: 'chat-online-43389',
-    storageBucket: 'chat-online-43389.appspot.com',
-    iosClientId: '264465522033-q8nv3sb7p8srccim9d62m9vseed7sirr.apps.googleusercontent.com',
-    iosBundleId: 'com.example.chatOnline',
-  );
-
-  static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyDbdLLmlkV1v6N5AyKBkLUl-iLj9MGIJFo',
-    appId: '1:264465522033:ios:fe8257b124a9bbca09aad0',
-    messagingSenderId: '264465522033',
-    projectId: 'chat-online-43389',
-    storageBucket: 'chat-online-43389.appspot.com',
-    iosClientId: '264465522033-q8nv3sb7p8srccim9d62m9vseed7sirr.apps.googleusercontent.com',
-    iosBundleId: 'com.example.chatOnline',
   );
 }
