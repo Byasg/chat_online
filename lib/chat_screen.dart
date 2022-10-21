@@ -27,29 +27,33 @@ class _ChatScreenState extends State<ChatScreen> {
     FirebaseAuth.instance.authStateChanges().listen((user) {});
   }
 
-  Future<Object?> _getUser() async {
+  Future<dynamic> _getUser() async {
+    final FirebaseAuth auth = FirebaseAuth.instance;
     try {
-      final GoogleSignIn googleSignIn = GoogleSignIn();
-
       final GoogleSignInAccount? googleUser = await googleSignIn.signIn();
+      final GoogleSignInAuthentication googleAuth =
+          await googleUser!.authentication;
 
-      final GoogleSignInAuthentication? googleAuth =
-          await googleUser?.authentication;
-
-      final credential = GoogleAuthProvider.credential(
-        accessToken: googleAuth?.accessToken,
-        idToken: googleAuth?.idToken,
+      final AuthCredential credential = GoogleAuthProvider.credential(
+        accessToken: googleAuth.accessToken,
+        idToken: googleAuth.idToken,
       );
 
-      return await FirebaseAuth.instance.signInWithCredential(credential);
-    } catch (e) {
-      print(">>> ERRO LOGIN: $e");
+      final UserCredential user = await auth.signInWithCredential(credential);
+      print("signed in ${user.user!.displayName}");
+      print("DADOS GOOGLE >>> ${user.user!.providerData[0]}");
+      return user.user!.providerData[0];
+    } on Exception catch (e) {
+      print("ERRO LOGIN GOOGLE >> $e");
+
+      return null;
     }
-    return null;
   }
 
   Future<void> _sendMessage({String? text, File? imgFile}) async {
-    final User? user = (await _getUser()) as User?;
+    var user = await _getUser();
+    print("VARIAVEL USER SENDMESSAGE >> ${user}");
+    //final User? user = (await _getUser()) as User?;
 
     if (user == null) {
       ScaffoldMessenger.of(context).showSnackBar(const SnackBar(

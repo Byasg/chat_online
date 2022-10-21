@@ -14,6 +14,66 @@
       },
       "oauth_client": [
         {
+          "client_id": "264465522033-7o2dptljn7r62d1d9q1f1avkgsotim6s.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.chat_online",
+            "certificate_hash": "a380c9cfd75dbb7fe1ca9b09c4c218c5c621137a"
+          }
+        },
+        {
+          "client_id": "264465522033-o89l6v6ibtoovtf110tklcfb1ko4ufd4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.chat_online",
+            "certificate_hash": "2781df13b79b62679e09658b2187cbc4d14a4d1f"
+          }
+        },
+        {
+          "client_id": "264465522033-fjml1jlkuoevjbdo1bi00tkf1vpmgi3l.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCajj_7jWsXk_mOIrS8q3_1MVYJg91YiuE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "264465522033-fjml1jlkuoevjbdo1bi00tkf1vpmgi3l.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "264465522033-q8nv3sb7p8srccim9d62m9vseed7sirr.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.chatOnline"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:264465522033:android:e8bba5d82f986a2a09aad0",
+        "android_client_info": {
+          "package_name": "com.example.chat_online_bya"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "264465522033-bmmksmnbqh15tpm7ringegobbv3dicne.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.chat_online_bya",
+            "certificate_hash": "f1c510eceaa8b475718e500040bcbceb38c0b52b"
+          }
+        },
+        {
           "client_id": "264465522033-fjml1jlkuoevjbdo1bi00tkf1vpmgi3l.apps.googleusercontent.com",
           "client_type": 3
         }
@@ -55,6 +115,14 @@
           "android_info": {
             "package_name": "com.example.chat_online_will",
             "certificate_hash": "a380c9cfd75dbb7fe1ca9b09c4c218c5c621137a"
+          }
+        },
+        {
+          "client_id": "264465522033-reeeb1jdpehdiu658p5mdn6g40kq7iun.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.chat_online_will",
+            "certificate_hash": "f1c510eceaa8b475718e500040bcbceb38c0b52b"
           }
         },
         {
